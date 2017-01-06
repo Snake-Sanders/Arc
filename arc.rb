@@ -13,6 +13,11 @@ class Arc
     puts "Arc driving!"
   end
 
+  def stop
+    @motor = :stop
+    puts "Arc waiting"
+  end
+
   def turn_off
     @motor = :stop
     @arc_main_status = :off
