@@ -1,11 +1,11 @@
 Given(/^the arc is off$/) do
-  arc = Arc.new
+  @arc.sys_status == :off
 end
 
 When(/^the arc is switched on$/) do
-  arc.turn_on
+  @arc.turn_on
 end
 
 Then(/^the arc is on$/) do
-  arc.sys_status == :on
+  @arc.sys_status == :on
 end
