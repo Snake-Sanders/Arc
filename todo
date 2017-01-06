@@ -1,0 +1,9 @@
+- add cucumber
+- add version file
+- add configuration JSON
+  - load config
+  - parse config
+- add unit test
+- convert to a arc gem
+- use rake
+- use rspec
