@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
 class Arc
-  attr_accessor :arc_main_status, :motor
+  attr_accessor :sys_status, :motor
 
   def turn_on
-      @arc_main_status = :on
+      @sys_status = :on
       puts "Arc on!"
   end
 
@@ -20,7 +20,7 @@ class Arc
 
   def turn_off
     @motor = :stop
-    @arc_main_status = :off
+    @sys_status = :off
     puts "Arc off"
   end
 end
