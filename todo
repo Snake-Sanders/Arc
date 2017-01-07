@@ -1,8 +1,8 @@
-- add cucumber
+OK- add cucumber
 - add version file
-- add configuration JSON
-  - load config
-  - parse config
+OK- add configuration JSON
+OK- load config
+OK- parse config
 - add unit test
 - convert to a arc gem
 - use rake
