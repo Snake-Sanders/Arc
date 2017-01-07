@@ -1,0 +1,11 @@
+{
+  "log_level" :0,
+  "log_output":"file",
+  "hardware":
+  {
+    "wheels"    : 4,
+    "wheel_type": "aluminium",
+    "loader"    : "LL"
+  },
+  "conf_status" : "loaded_ok"
+}
