@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
 require 'rubygems'
 require 'json'
+require 'logging'
+
+
 
 class Arc
-  attr_accessor :sys_status, :motor, :conf
+  attr_accessor :sys_status, :motor, :conf, :log
 
   def initialize
       @sys_status = {
@@ -21,6 +24,7 @@ class Arc
   def sys_startup
     puts "The system is starting:..."
     load_conf
+    logger_init
   end
   def load_conf
     #jsonConf = File.read("conf.json")
@@ -39,6 +43,13 @@ class Arc
         puts "failed to load config"
       end
     end
+  end
+
+  def logger_init
+    # @todo use config
+    # default setting
+    @log = Logging.logger(STDOUT)
+    @log.level = :warn
   end
 
   def drive
