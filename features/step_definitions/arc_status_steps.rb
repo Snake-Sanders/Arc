@@ -1,22 +1,10 @@
-#STR_MASK = Transform (([^"]*)"$/)) do |string|
-#  string.trim
-#end
-
 Given(/^the arc status is "([^"]*)"$/) do |power_state|
-  if power_state == "on"
-    @arc.turn_on
-  else
-    @arc.turn_off
-  end
-  expect(power_state).to eq(@arc.sys_status[:power].to_s)
+  switch_power(power_state)
+  power_state_is(power_state)
 end
 
 When(/^the arc is switched "([^"]*)"$/) do |power_state|
-  if power_state == "on"
-    @arc.turn_on
-  else
-    @arc.turn_off
-  end
+  switch_power(power_state)
 end
 
 Then(/^the conf is "([^"]*)"$/) do |load_state|
