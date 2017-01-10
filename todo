@@ -1,4 +1,5 @@
-- add logger
+- add todo
+OK- add logger
 OK- add cucumber
 - add version file
 OK- add configuration JSON
@@ -8,3 +9,4 @@ OK- parse config
 - convert to a arc gem
 - use rake
 - use rspec
+- add RDoc

@@ -3,7 +3,12 @@
 #end
 
 Given(/^the arc status is "([^"]*)"$/) do |power_state|
-  expect(power_state).to eq(@arc.sys_status[:power])
+  if power_state == "on"
+    @arc.turn_on
+  else
+    @arc.turn_off
+  end
+  expect(power_state).to eq(@arc.sys_status[:power].to_s)
 end
 
 When(/^the arc is switched "([^"]*)"$/) do |power_state|
@@ -15,5 +20,5 @@ When(/^the arc is switched "([^"]*)"$/) do |power_state|
 end
 
 Then(/^the conf is "([^"]*)"$/) do |load_state|
-  expect(load_state).to eq(@arc.sys_status[:conf])
+  expect(load_state).to eq(@arc.sys_status[:conf].to_s)
 end
