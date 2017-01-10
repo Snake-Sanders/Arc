@@ -1,9 +1,12 @@
 Arc
 ===
 
-This library is the first step of a journey that every markup file in a repository goes on before it is rendered on GitHub.com:
+This library is intended to control an agent over wireless communication such as zigbee.
+The agent is capable to take orders, driving to locations and performing actions.
+Ideally this will be deployed in a microprocessor like raspberry pi being the upper layer
+which controls the low level controller. These are actuators: Motors, as well as sensors 
 
-created on Feb 6, 2017
+Created on Feb 6, 2017
 
 Usage
 -----
