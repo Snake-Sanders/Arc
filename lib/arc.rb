@@ -3,17 +3,19 @@ require 'rubygems'
 require 'json'
 require 'logging'
 
+require_relative 'order/order_manager'
 require_relative 'startup'
 
 class Arc
 
-  attr_accessor :sys_status, :motor, :conf, :log
+  attr_accessor :sys_status, :motor, :conf, :log, :order_mgr
 
   def initialize
       @sys_status = {
         :power => "off",
         :conf  => "empty"
       }
+      @order_mgr = OrderManager.new
   end
 
   def turn_on
@@ -72,4 +74,17 @@ class Arc
     @sys_status[:power] = "off"
     puts "Arc off"
   end
+
+  def has_order
+    @order_mgr.has_order
+  end
+
+  def get_orders_size
+    @order_mgr.orders.size
+  end
+
+  def asign_order(new_order)
+    @order_mgr.add(new_order)
+  end
+
 end
