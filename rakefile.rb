@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'rake'
 require 'cucumber'
 require 'cucumber/rake/task'
 
@@ -33,8 +34,9 @@ namespace :test do
 
   desc "Run cucumber tests"
   task :cuke do
-    "Running cucumber tests"
-    Cucumber::Rake::Task.new
+    puts "Running cucumber tests..."
+    %x(cucumber)
+    puts "done"
   end
 
   Cucumber::Rake::Task.new(:features) do |t|
